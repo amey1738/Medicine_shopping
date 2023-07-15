@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 
@@ -31,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
       padding: EdgeInsets.only(left: leftPadding!,right: rightPadding!,top: topPadding!,bottom: bottomPadding!),
       height: 60,
       decoration:  const BoxDecoration(
-          color: Colors.white,
+          color: medicalBlue,
       ),
       child:  Row(
         children: [

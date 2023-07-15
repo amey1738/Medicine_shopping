@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/list_item_widgets/item_product.dart';
+import 'package:test_shopping/screens/cart_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/auto_slider_widget.dart';
@@ -47,8 +49,6 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
       ),
     );
   }
-
-
   Widget content() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +66,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
               ),
               InkWell(
                 onTap: (){
-
+                Get.to(CartScreen());
                 },
                 child: Icon(Icons.shopping_cart),
               )
