@@ -61,13 +61,13 @@ dependencies:
   dots_indicator: ^3.0.0
   syncfusion_flutter_sliders: ^21.2.10
   pinput: ^2.2.31
-
+  flutter_rating_bar: ^4.0.1
   fluentui_system_icons: ^1.1.202
-
+  flutter_spinkit: ^5.2.0
   flutter_image_slideshow: any
   like_button: ^2.0.5
   intl:
-
+  lorem_ipsum: ^0.0.3
   internet_connection_checker: ^0.0.1+4
   connectivity_plus: ^2.3.5
 

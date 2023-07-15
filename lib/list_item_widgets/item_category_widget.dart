@@ -14,17 +14,17 @@ class CategoryItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){
-        Get.to(AllProdScreen());
-      },
-      child: Padding(
-        padding: EdgeInsets.all(4),
+    return Padding(
+      padding: EdgeInsets.all(4),
+      child: InkWell(
+        onTap: () {
+          Get.to(AllProdScreen());
+        },
         child: Column(
           children: [
             SizedBox(
-                height: 80,
-                width: 80,
+                height: 100,
+                width: 100,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(imageLink.toString(),

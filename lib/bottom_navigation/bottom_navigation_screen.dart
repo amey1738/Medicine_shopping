@@ -65,7 +65,7 @@ class UserDashBoardScreenState extends State<CustomBottomNav> {
         backgroundColor: Colors.white,
         body: page[currentPage],
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: greenColor,
+          selectedItemColor: medicalBlue,
           showUnselectedLabels: true,
           showSelectedLabels: true,
           currentIndex: currentPage,

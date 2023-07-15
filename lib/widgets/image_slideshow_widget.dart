@@ -14,8 +14,7 @@ class ImageSlideShowWidget extends StatelessWidget {
       width: double.infinity,
       height: 250.h,
       initialPage: 0,
-
-      indicatorColor: greenColor,
+      indicatorColor: medicalBlue,
       indicatorBackgroundColor: Colors.grey,
       children: [
         Image.network(sourceImageLink, fit: BoxFit.fill,),
