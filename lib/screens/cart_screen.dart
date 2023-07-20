@@ -22,14 +22,14 @@ class _CartScreenState extends State<CartScreen> {
         child: Column(
           children: [
             Expanded(
-              flex: 1,
+              // flex: 1,
                 child: CustomAppBar(title: "My Cart")),
 
 
 
             // SizedBox(height: 20.h,),
             Expanded(
-              flex: 10,
+              flex: 7,
               child: ListView.builder(
                   itemCount: 4,
                   shrinkWrap: true,
@@ -42,7 +42,7 @@ class _CartScreenState extends State<CartScreen> {
             ),
 
             Expanded(
-              flex: 6,
+              flex: 5,
                 child: CartDetailsWidget()
             )
           ],

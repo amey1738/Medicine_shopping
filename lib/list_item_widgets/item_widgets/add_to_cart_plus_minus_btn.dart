@@ -42,7 +42,7 @@ class _AddToCartPlusMinusBtnState extends State<AddToCartPlusMinusBtn> {
                       width: 100.h,
                       decoration: const BoxDecoration(
                           color: medicalBlue,
-                          borderRadius: BorderRadius.all(Radius.circular(10))
+                          borderRadius: BorderRadius.all(Radius.circular(5))
                       ),
                       child: Center(child: MyText(text: 'Add to cart',
                           fontName: 'baloo',

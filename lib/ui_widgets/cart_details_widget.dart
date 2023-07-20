@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:test_shopping/screens/select_address_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/my_buttons.dart';
 import 'package:test_shopping/widgets/my_text.dart';
@@ -27,23 +29,23 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText(text: "Item Total (MRP)", fontName: "baloo", fontSize: 16.sp, color: Colors.grey.shade800,),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "Item Total (MRP)", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
+                    MyText(text: "29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 SizedBox(height: 5.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText(text: "Price Discount", fontName: "baloo", fontSize: 16.sp, color: Colors.grey.shade800,),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "Price Discount", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
+                    MyText(text: "29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 Divider(thickness: 1,color: Colors.grey.shade500,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText(text: "Shipping Fee", fontName: "baloo", fontSize: 16.sp, color: Colors.grey.shade800,),
+                    MyText(text: "Shipping Fee", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
                     MyText(text: "As per delivery address", fontName: "baloo", fontSize: 14.sp,color: Colors.grey.shade800,)
                   ],
                 ),
@@ -51,8 +53,8 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText(text: "To be paid", fontName: "baloo", fontSize: 16.sp, color: Colors.grey.shade800,),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "To be paid", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
+                    MyText(text: "29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 Divider(thickness: 1,color: Colors.grey.shade500,),
@@ -80,12 +82,13 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                   ],
                 ),
                 MyButtons("Checkout", medicalBlue, click: (){
-                }, fontSize: 14.sp, height: 30.h, width: 100.h,)
+                Get.to(SelectAddressScreen());
+                }, fontSize: 14.sp, height: 40.h, width: 100.h,)
               ],
             ),
           ),
         ),
-        SizedBox(height: 10.h,)
+
 
       ],
     );

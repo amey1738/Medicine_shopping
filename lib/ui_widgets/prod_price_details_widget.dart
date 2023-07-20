@@ -66,6 +66,7 @@ class _ProdPriceDetailsWidgetState extends State<ProdPriceDetailsWidget> {
               icon: const Icon(CupertinoIcons.chevron_down),
               iconSize: 20,
               elevation: 16,
+              focusColor: whiteColor,
               style: const TextStyle(
                   color: blackColor, fontFamily: 'baloo', fontSize: 16),
               underline: Container(),

@@ -50,7 +50,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       children: [
                         MyText(text: "Product Information", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,),
                         SizedBox(height: 10.h,),
-                        MyText(text: text, fontName: "baloo", fontSize: 12.sp),
+                        Padding(
+                          padding:  EdgeInsets.only(bottom: 10.h),
+                          child: MyText(text: text, fontName: "baloo", fontSize: 12.sp),
+                        ),
                         
 
                       ],

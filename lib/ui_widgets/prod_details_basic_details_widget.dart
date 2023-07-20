@@ -30,7 +30,7 @@ class _ProdDetailsBasicDetailsWidgetState extends State<ProdDetailsBasicDetailsW
               children: [
                 RatingBar.builder(
                   itemSize: 20.h,
-                  initialRating: 0,
+                  initialRating: 4,
                   minRating: 1,
                   direction: Axis.horizontal,
                   allowHalfRating: false,
@@ -40,7 +40,7 @@ class _ProdDetailsBasicDetailsWidgetState extends State<ProdDetailsBasicDetailsW
                   itemPadding: EdgeInsets.symmetric(horizontal: 1),
                   itemBuilder: (context, _) => Icon(
                     Icons.star,
-                    color: Colors.amber,
+                    color: Colors.yellow.shade800,
                   ),
                   onRatingUpdate: (rating) {
                     print(rating);

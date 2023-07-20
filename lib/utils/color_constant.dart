@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 
 
 const greenColor = Color(0xff5bb054);
@@ -22,6 +24,7 @@ const lightBlueColor = Color(0xff00baff);
 const darkBlueColor = Color(0xff0082B2);
 
 const medicalBlue = Color(0xff7DD1C1);
+var greyBgColor = Colors.grey.shade300;
 
 
 
