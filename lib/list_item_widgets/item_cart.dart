@@ -13,74 +13,105 @@ class ItemCart extends StatelessWidget {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: EdgeInsets.all(10.h),
+        padding: EdgeInsets.only(left: 10.h,right: 10.h,top: 5.h),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Divider(thickness: 1, color: medicalBlue,),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.network(
-                  sourceImageLink,
-                  height: 70.h,
-                  width: 100,
-                  fit: BoxFit.fill,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-
-                MyText(
-                  text: "\u{20B9} 100 ",
-                  fontName: "balo",
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Image.network(
+                      sourceImageLink,
+                      height: 70.h,
+                      width: 100,
+                      fit: BoxFit.fill,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MyText(
+                          text: "Prod Name",
+                          fontName: "balo",
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        MyText(
+                          text: "Prod desc",
+                          fontName: "balo",
+                          fontSize: 12,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 80.h,
+                    ),
+
+                  ],
+                ),
+
+
+
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
                     MyText(
-                      text: "Prod Name",
+                      text: "\u{20B9} 100 ",
                       fontName: "balo",
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      height: 5,
-                    ),
                     MyText(
-                      text: "Prod desc",
+                      text: "MRP \u{20B9} 100 ",
                       fontName: "balo",
-                      fontSize: 12,
+                      fontSize: 10.sp,
+                      lineThrough: TextDecoration.lineThrough,
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10.h,
                     ),
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: (){},
+                            child: Icon(Icons.delete_outline)),
+                        SizedBox(width: 10.h,),
+                        MyText(text: "1", fontName: "baloo", fontSize: 14.sp),
+                        SizedBox(width: 10.h,),
+                        InkWell(
+                            onTap: (){},
+                            child: Icon(Icons.add)),
 
-                    SizedBox(
-                      height: 5,
-                    ),
-                    // MyButtons(
-                    //   "Add To Cart",
-                    //   medicalBlue,
-                    //   click: () {},
-                    //   fontSize: 14,
-                    //   height: 30,
-                    //   width: 100,
-                    // )
-
+                      ],
+                    )
                   ],
                 ),
+
+
               ],
             ),
             SizedBox(height: 10.h,),
+
             Padding(
               padding:  EdgeInsets.only(left: 20.h, right: 20.h),
-              child: Divider(thickness: 3, color: Colors.grey.shade400, height: 5,),
+              child: Divider(thickness: 3.h, color: Colors.grey.shade400, height: 3.h,),
             ),
 
 

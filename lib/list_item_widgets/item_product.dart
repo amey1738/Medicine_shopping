@@ -69,11 +69,21 @@ class ItemProduct extends StatelessWidget {
                         SizedBox(
                           height: 5,
                         ),
-                        MyText(
-                          text: "\u{20B9} 100 ",
-                          fontName: "balo",
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                        Row(
+                          children: [
+                            MyText(
+                              text: "\u{20B9} 100 ",
+                              fontName: "balo",
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            MyText(
+                              text: "\u{20B9} 100 ",
+                              fontName: "balo",
+                              fontSize: 14.sp,
+                              lineThrough: TextDecoration.lineThrough,
+                            ),
+                          ],
                         ),
                         SizedBox(
                           height: 5,
@@ -89,13 +99,14 @@ class ItemProduct extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AddToCartPlusMinusBtn(),
-                            SizedBox(width: 10.h,),
+
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 MyText(text: "(10 Reviews)", fontName: "baloo", fontSize: 12.sp),
                                 RatingBar.builder(
-                                  itemSize: 18.h,
+                                  itemSize: 16.h,
                                   initialRating: 0,
                                   minRating: 1,
                                   direction: Axis.horizontal,
@@ -113,14 +124,17 @@ class ItemProduct extends StatelessWidget {
                                   },
                                 ),
                               ],
-                            )
+                            ),
+                            SizedBox(width: 30.h,),
+                            AddToCartPlusMinusBtn(),
+
                           ],
                         )
                       ],
                     ),
                   ],
                 ),
-                Divider(thickness: 1, color: medicalBlue,)
+                Divider(thickness: 1, color: medicalBlue,height: 10.h,)
               ],
             ),
           ),

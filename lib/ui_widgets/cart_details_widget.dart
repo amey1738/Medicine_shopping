@@ -30,7 +30,7 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MyText(text: "Item Total (MRP)", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "\u{20B9} 29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 SizedBox(height: 5.h,),
@@ -38,7 +38,7 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MyText(text: "Price Discount", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "\u{20B9} 29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 Divider(thickness: 1,color: Colors.grey.shade500,),
@@ -54,7 +54,7 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MyText(text: "To be paid", fontName: "baloo", fontSize: 14.sp, color: Colors.grey.shade800,),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "\u{20B9} 29.00", fontName: "baloo", fontSize: 14.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 Divider(thickness: 1,color: Colors.grey.shade500,),
@@ -78,7 +78,7 @@ class _CartDetailsWidgetState extends State<CartDetailsWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MyText(text: "Total Payable", fontName: "baloo", fontSize: 10.sp),
-                    MyText(text: "29.00", fontName: "baloo", fontSize: 18.sp, fontWeight: FontWeight.bold,)
+                    MyText(text: "\u{20B9} 29.00", fontName: "baloo", fontSize: 18.sp, fontWeight: FontWeight.bold,)
                   ],
                 ),
                 MyButtons("Checkout", medicalBlue, click: (){

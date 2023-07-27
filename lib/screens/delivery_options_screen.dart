@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:test_shopping/screens/checkout_screen.dart';
 import 'package:test_shopping/screens/payment_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/custom_app_bar.dart';
@@ -93,7 +94,7 @@ class _DeliveryOptionsScreenState extends State<DeliveryOptionsScreen> {
                       ],
                     ),
                     MyButtons("Continue", medicalBlue, click: (){
-                      Get.to(PaymentScreen());
+                      Get.to(CheckoutScreen());
                     }, fontSize: 14.sp, height: 40.h, width: 100.h,)
                   ],
                 ),
