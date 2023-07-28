@@ -6,6 +6,7 @@ import 'package:test_shopping/screens/add_new_address_screen.dart';
 import 'package:test_shopping/screens/delivery_options_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/custom_app_bar.dart';
+import 'package:test_shopping/widgets/floating_button.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 class SelectAddressScreen extends StatefulWidget {
@@ -20,13 +21,9 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      floatingActionButton: new FloatingActionButton(
-
-        onPressed: () {
-          Get.to(DeliveryOptionsScreen());
-        },
-        child: MyText(text: "Done", fontName: "baloo", fontSize: 14.sp),
-      ),
+      floatingActionButton: FloatingButton(floatingText: "Done", click: (){
+        Get.to(DeliveryOptionsScreen());
+      }),
 
       body: Padding(
         padding: EdgeInsets.only(top: 40.h),

@@ -10,7 +10,7 @@ class FloatingButton extends StatelessWidget {
   final VoidCallback click;
   final Color? color;
   const FloatingButton({super.key, required this.floatingText, required this.click,
-    this.color=greenColor});
+    this.color=medicalBlue});
 
   @override
   Widget build(BuildContext context) {
