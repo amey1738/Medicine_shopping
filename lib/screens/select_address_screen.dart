@@ -17,6 +17,10 @@ class SelectAddressScreen extends StatefulWidget {
 }
 
 class _SelectAddressScreenState extends State<SelectAddressScreen> {
+
+  List<String> addressnames = ['name', 'name 2', 'name 3'];
+  int selectedItem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,12 +60,21 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
 
             Expanded(
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: addressnames.length,
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
-                    return AddressItem();
+                    return AddressItem(name: addressnames[index], click: () {
+                      setState(() {
+                        selectedItem = index;
+                        debugPrint("selected item ${selectedItem}");
+                      });
+                    },
+                      boxColor:index==selectedItem
+                          ? greenColor
+                          : backgroudColorGrey,
+                    );
 
                   }),
             ),

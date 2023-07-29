@@ -4,7 +4,11 @@ import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 class AddressItem extends StatelessWidget {
-  const AddressItem({Key? key}) : super(key: key);
+  final String name;
+  final bool? isSelected;
+  final VoidCallback click;
+  final Color boxColor;
+  const AddressItem({Key? key, required this.name, this.isSelected, required this.click, required this.boxColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +19,7 @@ class AddressItem extends StatelessWidget {
 
         },
         child: Container(
-          color: greyBgColor,
+          color: boxColor,
           child: Padding(
             padding: EdgeInsets.all(10.h),
             child: Column(
@@ -37,7 +41,7 @@ class AddressItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MyText(text: "Address Name", fontName: "baloo", fontSize: 14.sp, fontWeight:FontWeight.bold,),
+                        MyText(text: name, fontName: "baloo", fontSize: 14.sp, fontWeight:FontWeight.bold,),
                         SizedBox(height: 4.h,),
                         MyText(text: "Address Line 1", fontName: "baloo", fontSize: 12.sp,),
                         SizedBox(height: 4.h,),

@@ -8,6 +8,7 @@ import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/custom_app_bar.dart';
 import 'package:test_shopping/widgets/image_slideshow_widget.dart';
 import 'package:test_shopping/widgets/my_text.dart';
+import 'package:test_shopping/widgets/prod_detail_app_bar.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -28,7 +29,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         padding: EdgeInsets.only(top: 40.h),
         child:  Column(
           children: [
-            CustomAppBar(title: "Product Details"),
+            ProdDetailAppBar(title: "Product Details"),
             Expanded(child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,

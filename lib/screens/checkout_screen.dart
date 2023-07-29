@@ -30,7 +30,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(flex: 1, child: CustomAppBar(title: "Checkout")),
+            Expanded( child: CustomAppBar(title: "Checkout")),
             Expanded(
               flex: 12,
               child: SingleChildScrollView(
@@ -113,13 +113,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(10.h),
-                      child: MyTextField(
-                          controller: specialInstructionController,
-                          hintText: "Special Instructions",
-                          hintColor: darkGrey),
-                    ),
+                    MyTextField(
+                        controller: specialInstructionController,
+                        hintText: "Special Instructions",
+                        hintColor: darkGrey),
                     Padding(
                       padding: EdgeInsets.all(10.h),
                       child: MyText(
