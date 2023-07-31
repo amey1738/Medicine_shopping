@@ -19,7 +19,7 @@ class SelectAddressScreen extends StatefulWidget {
 class _SelectAddressScreenState extends State<SelectAddressScreen> {
 
   List<String> addressnames = ['name', 'name 2', 'name 3'];
-  int selectedItem = 0;
+  int selectedItem =0 ;
 
   @override
   Widget build(BuildContext context) {
@@ -65,15 +65,16 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
-                    return AddressItem(name: addressnames[index], click: () {
-                      setState(() {
-                        selectedItem = index;
-                        debugPrint("selected item ${selectedItem}");
-                      });
-                    },
-                      boxColor:index==selectedItem
-                          ? greenColor
+                    return AddressItem(name: addressnames[index],
+                      boxColor:selectedItem==index
+                          ? medicalBlue
                           : backgroudColorGrey,
+                      click: () {
+                        setState(() {
+                          selectedItem = index;
+                        });
+                    },
+                    isSelected: selectedItem==index?true:false,
                     );
 
                   }),

@@ -57,10 +57,14 @@ class _DeliveryOptionsScreenState extends State<DeliveryOptionsScreen> {
                       style: TextStyle(fontSize: 16),
                       softWrap: true,
                     ),
-                    groupValue: "",
-                    activeColor: Colors.green,
-                    onChanged: (value) {},
-                    value: 'one',
+                    groupValue: 2,
+                    activeColor: medicalBlue,
+                    onChanged: (value) {
+                      setState(() {
+
+                      });
+                    },
+                    value: 1,
                   ),
                   RadioListTile(
                     title: Text(
@@ -68,10 +72,14 @@ class _DeliveryOptionsScreenState extends State<DeliveryOptionsScreen> {
                       style: TextStyle(fontSize: 16),
                       softWrap: true,
                     ),
-                    groupValue: "",
-                    activeColor: Colors.green,
-                    onChanged: (value) {},
-                    value: 'one',
+                    groupValue: 2,
+                    activeColor: medicalBlue,
+                    onChanged: (value) {
+                      setState(() {
+
+                      });
+                    },
+                    value: 2,
                   ),
 
                 ],

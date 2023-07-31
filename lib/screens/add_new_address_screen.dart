@@ -70,6 +70,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                   3,
                       (int index) {
                     return ChoiceChip(
+                      selectedColor: medicalBlue,
                       label: Text('Item $index'),
                       selected: _value == index,
                       onSelected: (bool selected) {
