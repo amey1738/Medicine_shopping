@@ -7,6 +7,7 @@ import 'package:test_shopping/widgets/my_text.dart';
 import '../utils/color_constant.dart';
 
 class OrderItem extends StatelessWidget {
+  final int? count= 4;
 
   const OrderItem({super.key});
 
@@ -53,7 +54,7 @@ class OrderItem extends StatelessWidget {
                           .size
                           .height / 20 - 1,
                       child: ListView.builder(
-                          itemCount: 3,
+                          itemCount: count!>4?4:count,
                           shrinkWrap: false,
                           padding: const EdgeInsets.only(),
                           scrollDirection: Axis.horizontal,
