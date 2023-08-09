@@ -9,6 +9,7 @@ class MyTextField extends StatelessWidget {
   final Color hintColor;
   final TextInputType? textInputType;
   final FormFieldValidator? validator;
+  final bool? enabled;
 
   const MyTextField(
       {Key? key,
@@ -17,7 +18,7 @@ class MyTextField extends StatelessWidget {
       required this.hintText,
       required this.hintColor,
       this.textInputType,
-      this.validator})
+      this.validator, this.enabled})
       : super(key: key);
 
   @override
@@ -27,6 +28,7 @@ class MyTextField extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 20.w),
           child: TextFormField(
+            enabled: enabled,
             controller: controller,
             validator: validator,
             keyboardType: textInputType,
