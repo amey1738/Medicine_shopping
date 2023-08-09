@@ -50,7 +50,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         MyText(text: "Product Information", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,),
-                        SizedBox(height: 10.h,),
+                        SizedBox(height: 5.h,),
                         Padding(
                           padding:  EdgeInsets.only(bottom: 10.h),
                           child: MyText(text: text, fontName: "baloo", fontSize: 12.sp),

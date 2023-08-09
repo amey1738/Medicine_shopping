@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:test_shopping/bottom_navigation/bottom_navigation_screen.dart';
 import 'package:test_shopping/screens/home_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
@@ -26,9 +27,16 @@ class _OrderPlacedScreenState extends State<OrderPlacedScreen> {
           children: [
           Padding(
             padding:  EdgeInsets.all(10.h),
-            child: MyButtons("Continue Shopping", medicalBlue, click: (){
-              Get.to(CustomBottomNav());
-            }, fontSize: 14.sp, height: 40.h,),
+            child: Column(
+              children: [
+                Lottie.asset('animations/correct-sign.json',
+                height: 300.h,width: 100.h,repeat: true
+                ,reverse: true),
+                MyButtons("Continue Shopping", medicalBlue, click: (){
+                  Get.to(CustomBottomNav());
+                }, fontSize: 14.sp, height: 40.h,),
+              ],
+            ),
           )
           ],
         ),
