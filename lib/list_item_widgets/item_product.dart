@@ -43,7 +43,7 @@ class ItemProduct extends StatelessWidget {
                       sourceImageLink,
                       height: 100.h,
                       width: 130,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                     ),
                     SizedBox(
                       width: 10,

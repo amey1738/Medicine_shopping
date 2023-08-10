@@ -28,7 +28,7 @@ class CategoryItemWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(imageLink.toString(),
-                    fit: BoxFit.fill,),
+                    fit: BoxFit.cover,),
                 )
             ),
             SizedBox(height: 4),

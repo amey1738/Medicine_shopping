@@ -1,12 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/screens/cart_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/auto_slider_widget.dart';
+import 'package:test_shopping/widgets/my_text.dart';
 
 
 String currentLocation = "Navi Mumbai";
@@ -30,7 +32,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
     return Scaffold(
       backgroundColor: whiteColor,
       body: Padding(
-        padding: const EdgeInsets.only(top: 40, left: 10,right: 10),
+        padding: const EdgeInsets.only(top: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -54,12 +56,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: (){
-
-                },
-                child: Icon(Icons.person),
-              ),
+              MyText(text: 'Title Here', fontName: 'baloo', fontSize: 16.sp,),
               InkWell(
                 onTap: (){
                 Get.to(CartScreen());
@@ -84,8 +81,12 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                 );
               }),
         ),
+        SizedBox(height: 10.h,),
 
-        AutoSliderWidget()
+        const AutoSliderWidget(),
+
+
+
 
 
 

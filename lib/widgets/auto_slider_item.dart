@@ -10,7 +10,6 @@ class AutoSliderItems extends StatelessWidget {
       width: double.infinity,
       height: 200,
       child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
         child: Image.network(sliderImage.toString(),
             fit: BoxFit.cover),
       ),
