@@ -42,9 +42,11 @@ class _OrderSummeryScreen extends State<OrderSummeryScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             MyText(
-                                text: "Delivery Address",
-                                fontName: "baloo",
-                                fontSize: 14.sp),
+                              text: "OrderID : #00022",
+                              fontName: "baloo",
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ],
                         ),
                       ),
