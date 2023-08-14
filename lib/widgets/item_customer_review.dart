@@ -42,7 +42,7 @@ class ItemCustomerReview extends StatelessWidget {
             ),
           SizedBox(height: 10.h,),
           RatingBar.builder(
-            itemSize: 20.h,
+            itemSize: 14.h,
             initialRating: 4,
             minRating: 1,
             direction: Axis.horizontal,

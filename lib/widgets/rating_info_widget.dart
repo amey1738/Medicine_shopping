@@ -14,48 +14,132 @@ class RatingInfoWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.all(10.h),
+          padding: EdgeInsets.only(left: 5.h, top: 5.h, bottom: 5.h),
           child: Row(
-            children: <Widget>[
-              MyText(text: '4', fontName: 'baloo', fontSize: 28.sp),
-              MyText(text: '/5', fontName: 'baloo', fontSize: 20.sp)
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Row(
+                    children: <Widget>[
+                      MyText(text: '4', fontName: 'baloo', fontSize: 40.sp),
+                      MyText(text: '/5', fontName: 'baloo', fontSize: 25.sp)
+                    ],
+                  ),
+                  RatingBar.builder(
+                    itemSize: 25.h,
+                    initialRating: 4,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: false,
+                    itemCount: 5,
+                    updateOnDrag: false,
+                    ignoreGestures: true,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                    itemBuilder: (context, _) => Icon(
+                      Icons.star,
+                      color: Colors.yellow.shade800,
+                    ),
+                    onRatingUpdate: (rating) {
+                      print(rating);
+                    },
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  MyText(
+                      text: "100 Ratings", fontName: "baloo", fontSize: 14.sp),
+                  MyText(
+                      text: "223 Reviews", fontName: "baloo", fontSize: 14.sp),
+                  Divider(
+                    height: 10.h,
+                    thickness: 0.4.h,
+                    color: lightGreyColor,
+                  )
+                ],
+              ),
+              SizedBox(
+                width: 20.h,
+              ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyText(text: '5 Star', fontName: 'baloo', fontSize: 12.sp),
+                        MyText(text: '90%', fontName: 'baloo', fontSize: 12.sp),
+                      ],
+                    ),
+                    const LinearProgressIndicator(
+                      value: 0.9,
+                      backgroundColor: medicalBlue,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyText(text: '4 Star', fontName: 'baloo', fontSize: 12.sp),
+                        MyText(text: '80%', fontName: 'baloo', fontSize: 12.sp),
+                      ],
+                    ),
+                    const LinearProgressIndicator(
+                      value: 0.8,
+                      backgroundColor: medicalBlue,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyText(text: '3 Star', fontName: 'baloo', fontSize: 12.sp),
+                        MyText(text: '55%', fontName: 'baloo', fontSize: 12.sp),
+                      ],
+                    ),
+                    const LinearProgressIndicator(
+                      value: 0.6,
+                      backgroundColor: medicalBlue,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyText(text: '2 Star', fontName: 'baloo', fontSize: 12.sp),
+                        MyText(text: '20%', fontName: 'baloo', fontSize: 12.sp),
+                      ],
+                    ),
+                    const LinearProgressIndicator(
+                      value: 0.3,
+                      backgroundColor: medicalBlue,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyText(text: '1 Star', fontName: 'baloo', fontSize: 12.sp),
+                        MyText(text: '100%', fontName: 'baloo', fontSize: 12.sp),
+                      ],
+                    ),
+                    const LinearProgressIndicator(
+                      value: 0.2,
+                      backgroundColor: medicalBlue,
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            RatingBar.builder(
-              itemSize: 20.h,
-              initialRating: 4,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: false,
-              itemCount: 5,
-              updateOnDrag: false,
-              ignoreGestures: true,
-              itemPadding: EdgeInsets.symmetric(horizontal: 1),
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.yellow.shade800,
-              ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
-            SizedBox(
-              width: 20.h,
-            ),
-            MyText(text: "100 Ratings", fontName: "baloo", fontSize: 14.sp),
-            MyText(text: "223 Reviews", fontName: "baloo", fontSize: 14.sp),
-            Divider(
-              height: 10.h,
-              thickness: 0.4.h,
-              color: lightGreyColor,
-            ),
-          ],
-        )
       ],
     );
   }

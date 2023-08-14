@@ -9,8 +9,8 @@ import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/my_buttons.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
-class ItemProduct extends StatelessWidget {
-  const ItemProduct({super.key});
+class ItemComboProduct extends StatelessWidget {
+  const ItemComboProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +132,6 @@ class ItemProduct extends StatelessWidget {
                               ],
                             ),
                             SizedBox(width: 30.h,),
-                            AddToCartPlusMinusBtn(),
 
                           ],
                         )

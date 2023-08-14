@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
+import 'package:test_shopping/list_item_widgets/item_combo_product.dart';
+import 'package:test_shopping/list_item_widgets/item_product.dart';
+import 'package:test_shopping/ui_widgets/custom_information_widget.dart';
+import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
+import 'package:test_shopping/ui_widgets/prod_detail_bottom_widget.dart';
+import 'package:test_shopping/ui_widgets/prod_detail_combo_widget.dart';
+import 'package:test_shopping/ui_widgets/prod_detail_mfg_detail_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_details_basic_details_widget.dart';
+import 'package:test_shopping/ui_widgets/prod_details_shipping_info_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_other_details_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_price_details_widget.dart';
 import 'package:test_shopping/utils/circular_image.dart';
@@ -26,6 +34,27 @@ class ProductDetailsScreen extends StatefulWidget {
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   String text = loremIpsum(words: 60, paragraphs: 3, initWithLorem: true);
 
+  final ScrollController scrollController = ScrollController();
+  bool scrollVisibility = false;
+
+  @override
+  void initState() {
+    scrollController.addListener(() {
+      if (scrollController.position.pixels < 554.2115811808319) {
+        scrollVisibility = false;
+        debugPrint(
+            'scrolling : ${scrollController.position.pixels.toString()}');
+      } else {
+        scrollVisibility = true;
+        // debugPrint('scrolling : ${scrollController.position.pixels.toString()}');
+
+        debugPrint('scrolling : ${scrollVisibility}');
+      }
+      setState(() {});
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +66,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             const ProdDetailAppBar(title: "Product Details"),
             Expanded(
                 child: SingleChildScrollView(
+              controller: scrollController,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,158 +110,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   SizedBox(
                     height: 10.h,
                   ),
-                  Container(
-                    color: greyBgColor,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(10.h),
-                          child: MyText(
-                            text: "Manufacturing Information",
-                            fontName: "baloo",
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 10.h, right: 10.h),
-                          child: Row(
-                            children: [
-                              CircularImage(radius: 30.h),
-                              SizedBox(
-                                width: 10.h,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  MyText(
-                                    text: 'Company Name',
-                                    fontName: 'baloo',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  MyText(
-                                    text: 'Mfg. Date',
-                                    fontName: 'baloo',
-                                    fontSize: 12.sp,
-                                  ),
-                                  MyText(
-                                    text: 'Exp. Date',
-                                    fontName: 'baloo',
-                                    fontSize: 12.sp,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                      ],
-                    ),
-                  ),
+                  const ProdDetailMfgDetailWidget(),
                   SizedBox(
                     height: 10.h,
                   ),
-                  Container(
-                    color: greyBgColor,
-                    child: Padding(
-                      padding: EdgeInsets.all(10.h),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              MyText(
-                                text: "Earliest Delivery by ",
-                                fontName: "baloo",
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              SizedBox(
-                                width: 5.h,
-                              ),
-                              MyText(
-                                text: "Today",
-                                fontName: "baloo",
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blueAccent,
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 6.h,
-                          ),
-                          Row(
-                            children: [
-                              MyText(
-                                text: "Delivering to: ",
-                                fontName: "baloo",
-                                fontSize: 16.sp,
-                                color: lightGreyColor,
-                              ),
-                              SizedBox(
-                                width: 5.h,
-                              ),
-                              MyText(
-                                text: "400605, Thane",
-                                fontName: "baloo",
-                                fontSize: 16.sp,
-                              ),
-                              Icon(Icons.keyboard_arrow_down_outlined)
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Divider(
-                            height: 10.h,
-                            thickness: 0.4.h,
-                            color: lightGreyColor,
-                          ),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.circle,
-                                color: lightGreyColor,
-                              ),
-                              SizedBox(
-                                width: 10.h,
-                              ),
-                              MyText(
-                                  text: 'Cash on delivery available',
-                                  fontName: 'baloo',
-                                  fontSize: 14.sp)
-                            ],
-                          ),
-                          SizedBox(
-                            height: 4.h,
-                          ),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.circle,
-                                color: lightGreyColor,
-                              ),
-                              SizedBox(
-                                width: 10.h,
-                              ),
-                              MyText(
-                                  text: 'Easy 7 days return available',
-                                  fontName: 'baloo',
-                                  fontSize: 14.sp)
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                  const ProdDetailsShippingInfoWidget(),
                   SizedBox(
                     height: 10.h,
                   ),
@@ -250,14 +133,18 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                           RatingInfoWidget(),
-                          SizedBox(height: 10.h,),
+                          SizedBox(
+                            height: 10.h,
+                          ),
                           MyText(
                             text: 'Top Reviews',
                             fontName: 'baloo',
                             fontSize: 16.sp,
                             fontWeight: FontWeight.bold,
                           ),
-                          SizedBox(height: 10.h,),
+                          SizedBox(
+                            height: 10.h,
+                          ),
                           ListView.builder(
                               itemCount: 3,
                               shrinkWrap: true,
@@ -265,27 +152,51 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               // scrollDirection: Axis.vertical,
                               physics: const NeverScrollableScrollPhysics(),
                               itemBuilder: (BuildContext context, int index) {
-                                return ItemCustomerReview();
+                                return const ItemCustomerReview();
                               }),
                           SizedBox(
                             height: 10.h,
                           ),
-                          MyButtons('See All 223 Reviews', medicalBlue, click: (){}, fontSize: 14.sp, height: 40.h,),
-                          SizedBox(height: 10.h,),
-
-
+                          MyButtons(
+                            'See All 223 Reviews',
+                            medicalBlue,
+                            click: () {},
+                            fontSize: 14.sp,
+                            height: 40.h,
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
                         ],
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  const ProdDetailComboWidget(),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  CustomInformationWidget(
+                    title: 'Other Information',
+                    text: text,
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  const DevInfoWidget(),
+                  SizedBox(
+                    height: 10.h,
+                  ),
                 ],
               ),
-            ))
+            )),
+            Visibility(
+                visible: scrollVisibility, child: ProdDetailBottomWidget())
           ],
         ),
       ),
     );
   }
-
-
 }
