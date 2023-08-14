@@ -65,7 +65,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                 onTap: () {
                   Get.to(CartScreen());
                 },
-                child: Icon(Icons.shopping_cart),
+                child: Icon(Icons.shopping_cart_outlined),
               )
             ],
           ),
@@ -77,15 +77,36 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
         const SizedBox(
           height: 10,
         ),
-        Container(
-          height: 150,
-          color: greyBgColor,
+        Padding(
+          padding: EdgeInsets.only(left: 10.h, top: 10.h),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MyText(
+                text: 'Greetings!',
+                fontName: 'baloo',
+                fontSize: 14.sp,
+                color: Colors.blueAccent,
+              ),
+              MyText(
+                text: 'Welcome notice here',
+                fontName: 'baloo',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: MediaQuery.sizeOf(context).height * 0.16,
+          // color: greyBgColor,
           child: Padding(
-            padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
+            padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
             child: ListView.builder(
                 itemCount: 6,
                 shrinkWrap: true,
-                padding: EdgeInsets.zero,
+                padding: EdgeInsets.only(left: 5.h, right: 10.h),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
                   return const CategoryItemWidget(
@@ -99,7 +120,10 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
           height: 10.h,
         ),
 
-        const AutoSliderWidget(),
+        Padding(
+          padding:  EdgeInsets.all(10.h),
+          child: const AutoSliderWidget(),
+        ),
         SizedBox(
           height: 5.h,
         ),
@@ -111,11 +135,22 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.all(10.h),
-                child: MyText(
-                  text: 'Top Sellers',
-                  fontName: 'baloo',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MyText(
+                      text: 'Top Sellers',
+                      fontName: 'baloo',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    MyText(
+                      text: 'See all >',
+                      fontName: 'baloo',
+                      fontSize: 14.sp,
+                      color: Colors.blue,
+                    )
+                  ],
                 ),
               ),
               Container(
@@ -133,8 +168,10 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
             ],
           ),
         ),
-        SizedBox(
-          height: 10.h,
+
+        Padding(
+          padding:  EdgeInsets.all(10.h),
+          child: const AutoSliderWidget(),
         ),
 
         Container(
@@ -153,9 +190,11 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               GridView.builder(
-                shrinkWrap: true,
+                  shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.zero,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -164,16 +203,16 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                   itemCount: 9,
                   itemBuilder: (BuildContext context, int index) {
                     return ItemBrand();
-                  }
-              )
-
+                  })
             ],
           ),
         ),
 
-        SizedBox(
-          height: 10.h,
+        Padding(
+          padding:  EdgeInsets.all(10.h),
+          child: const AutoSliderWidget(),
         ),
+
         Container(
           color: greyBgColor,
           child: Column(
@@ -182,11 +221,22 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.all(10.h),
-                child: MyText(
-                  text: 'New Arrivals',
-                  fontName: 'baloo',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MyText(
+                      text: 'New Arrivals',
+                      fontName: 'baloo',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    MyText(
+                      text: 'See all >',
+                      fontName: 'baloo',
+                      fontSize: 14.sp,
+                      color: Colors.blue,
+                    )
+                  ],
                 ),
               ),
               Container(

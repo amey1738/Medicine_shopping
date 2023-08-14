@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 import 'package:test_shopping/list_item_widgets/item_combo_product.dart';
+import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
 import 'package:test_shopping/list_item_widgets/item_product.dart';
 import 'package:test_shopping/ui_widgets/custom_information_widget.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
@@ -133,6 +134,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                           RatingInfoWidget(),
+                          Divider(
+                            height: 10.h,
+                            thickness: 0.4.h,
+                            color: lightGreyColor,
+                          ),
                           SizedBox(
                             height: 10.h,
                           ),
@@ -175,6 +181,35 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     height: 10.h,
                   ),
                   const ProdDetailComboWidget(),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Container(
+                    color: greyBgColor,
+                    width: double.infinity,
+                    child: Padding(
+                      padding:  EdgeInsets.all(10.h),
+                      child: MyText(
+                        text: 'Related Products',
+                        fontName: "baloo",
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                  Container(
+                    height: MediaQuery.sizeOf(context).height * 0.37,
+                    color: greyBgColor,
+                    child: ListView.builder(
+                        itemCount: 6,
+                        shrinkWrap: true,
+                        padding: EdgeInsets.zero,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (BuildContext context, int index) {
+                          return const ItemGridProduct();
+                        }),
+                  ),
                   SizedBox(
                     height: 10.h,
                   ),

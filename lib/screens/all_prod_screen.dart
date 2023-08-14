@@ -42,9 +42,7 @@ class _AllProdScreenState extends State<AllProdScreen> {
                         ],
                       ),
                     ),
-                    const VerticalDivider(
-                      thickness: 1,
-                    ),
+                    MyText(text: '|', fontName: 'baloo', fontSize: 14.sp),
                     InkWell(
                       onTap: (){
                         showSortOptions();
@@ -60,14 +58,13 @@ class _AllProdScreenState extends State<AllProdScreen> {
                 ),
               ),
             ),
-
             Expanded(
               child: Padding(
                 padding:  EdgeInsets.only(left: 10.h,right: 10.h),
                 child: ListView.builder(
                     itemCount: 10,
                     shrinkWrap: true,
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 10.h),
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
                       return ItemProduct();

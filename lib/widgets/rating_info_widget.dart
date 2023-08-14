@@ -76,7 +76,8 @@ class RatingInfoWidget extends StatelessWidget {
                     ),
                     const LinearProgressIndicator(
                       value: 0.9,
-                      backgroundColor: medicalBlue,
+                      backgroundColor: darkGrey,
+
                     ),
                     SizedBox(
                       height: 4.h,
@@ -90,7 +91,7 @@ class RatingInfoWidget extends StatelessWidget {
                     ),
                     const LinearProgressIndicator(
                       value: 0.8,
-                      backgroundColor: medicalBlue,
+                      backgroundColor: darkGrey,
                     ),
                     SizedBox(
                       height: 4.h,
@@ -104,7 +105,7 @@ class RatingInfoWidget extends StatelessWidget {
                     ),
                     const LinearProgressIndicator(
                       value: 0.6,
-                      backgroundColor: medicalBlue,
+                      backgroundColor: darkGrey,
                     ),
                     SizedBox(
                       height: 4.h,
@@ -118,7 +119,8 @@ class RatingInfoWidget extends StatelessWidget {
                     ),
                     const LinearProgressIndicator(
                       value: 0.3,
-                      backgroundColor: medicalBlue,
+                      backgroundColor: darkGrey,
+                      color: Colors.redAccent,
                     ),
                     SizedBox(
                       height: 4.h,
@@ -132,7 +134,8 @@ class RatingInfoWidget extends StatelessWidget {
                     ),
                     const LinearProgressIndicator(
                       value: 0.2,
-                      backgroundColor: medicalBlue,
+                      backgroundColor: darkGrey,
+                      color: Colors.redAccent,
                     ),
                   ],
                 ),

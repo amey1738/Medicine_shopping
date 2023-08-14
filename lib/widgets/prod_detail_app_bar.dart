@@ -55,7 +55,7 @@ class ProdDetailAppBar extends StatelessWidget {
             onTap: (){
               Get.to(CartScreen());
             },
-            child: Icon(Icons.shopping_cart),
+            child: Icon(Icons.shopping_cart_outlined),
           )
 
 
