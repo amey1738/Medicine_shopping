@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:test_shopping/bottom_navigation/bottom_navigation_screen.dart';
+import 'package:test_shopping/onborading/onborading_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 
 import 'screens/home_screen.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       ),
       title: 'Test Shopping',
       home:
-      CustomBottomNav(),
+      OnBoardingScreen(),
 
     );
   }
