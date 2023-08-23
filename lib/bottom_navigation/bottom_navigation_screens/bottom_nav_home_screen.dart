@@ -7,6 +7,7 @@ import 'package:test_shopping/list_item_widgets/item_brand.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
 import 'package:test_shopping/screens/cart_screen.dart';
+import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/auto_slider_widget.dart';
@@ -111,7 +112,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                 itemBuilder: (BuildContext context, int index) {
                   return const CategoryItemWidget(
                     imageLink: sourceImageLink,
-                    title: 'Dog',
+                    title: 'Category',
                   );
                 }),
           ),
@@ -254,7 +255,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
             ],
           ),
         ),
-
+        DevInfoWidget(),
         // ItemProduct(),
       ],
     );

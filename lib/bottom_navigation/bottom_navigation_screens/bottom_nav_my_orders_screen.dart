@@ -25,10 +25,22 @@ class _BottomNavMyOrdersScreenState extends State<BottomNavMyOrdersScreen> {
         body: Column(
           children: [
             CustomAppBar(title: 'Orders'),
-            SizedBox(height: 10.h,),
-            OrderItem(click: () {
-              Get.to(OrderSummeryScreen());
-            },),
+
+
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 10,
+                  shrinkWrap: true,
+                  padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (BuildContext context, int index) {
+                    return   OrderItem(click: () {
+                      Get.to(const OrderSummeryScreen());
+                    },);
+
+                  }),
+            ),
+
 
 
           ],

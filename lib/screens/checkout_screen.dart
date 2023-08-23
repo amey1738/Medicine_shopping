@@ -30,7 +30,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded( child: CustomAppBar(title: "Checkout")),
+            CustomAppBar(title: "Checkout"),
             Expanded(
               flex: 12,
               child: SingleChildScrollView(
