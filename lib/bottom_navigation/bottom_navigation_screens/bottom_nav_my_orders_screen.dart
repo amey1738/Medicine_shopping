@@ -12,37 +12,33 @@ class BottomNavMyOrdersScreen extends StatefulWidget {
   const BottomNavMyOrdersScreen({super.key});
 
   @override
-  State<BottomNavMyOrdersScreen> createState() => _BottomNavMyOrdersScreenState();
+  State<BottomNavMyOrdersScreen> createState() =>
+      _BottomNavMyOrdersScreenState();
 }
 
 class _BottomNavMyOrdersScreenState extends State<BottomNavMyOrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 40.h),
+      padding: EdgeInsets.only(top: 40.h),
       child: Scaffold(
         backgroundColor: whiteColor,
         body: Column(
           children: [
-            CustomAppBar(title: 'Orders'),
-
-
             Expanded(
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: 4,
                   shrinkWrap: true,
                   padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
-                    return   OrderItem(click: () {
-                      Get.to(const OrderSummeryScreen());
-                    },);
-
+                    return OrderItem(
+                      click: () {
+                        Get.to(const OrderSummeryScreen());
+                      },
+                    );
                   }),
             ),
-
-
-
           ],
         ),
       ),

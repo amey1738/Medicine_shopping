@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/my_text.dart';
+import 'package:badges/badges.dart'as badges;
 
 class DevInfoWidget extends StatelessWidget {
   const DevInfoWidget({super.key});
@@ -39,9 +40,42 @@ class DevInfoWidget extends StatelessWidget {
               color: lightGreyColor,
             ),
 
+
           ],
         ),
       ),
     );
   }
+
+
+  Widget addBadgeCount(
+      {required Widget widget,
+        required int badgeCount,
+        Color badgeColor = Colors.red,
+        badges.BadgeShape badgeShape = badges.BadgeShape.circle}) {
+    return badges.Badge(
+      showBadge: badgeCount != 0,
+      badgeContent: Text(
+        badgeCount.toString(),
+        style: TextStyle(color: Colors.white),
+      ),
+      badgeStyle: badges.BadgeStyle(badgeColor: badgeColor, shape: badgeShape),
+      child: widget,
+    );
+  }
+
+  Widget addBadgeIcon(
+      {required Widget widget,
+        required Icon? badgeIcon,
+        Color badgeColor = Colors.green,
+        badges.BadgeShape badgeShape = badges.BadgeShape.circle}) {
+    return badges.Badge(
+      showBadge: badgeIcon != null,
+      position: badges.BadgePosition.bottomStart(bottom: -20, start: -12),
+      badgeContent: badgeIcon,
+      badgeStyle: badges.BadgeStyle(badgeColor: badgeColor, shape: badgeShape),
+      child: widget,
+    );
+  }
+
 }

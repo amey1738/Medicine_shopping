@@ -31,7 +31,7 @@ class OTPPin extends StatelessWidget {
     );
     final focusedPinTheme = defaultPinTheme.copyDecorationWith(
       border: Border.all(
-        color: greenColor,
+        color: medicalBlue,
       ),
       borderRadius: BorderRadius.circular(5.r),
     );

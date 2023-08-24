@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
-import 'package:test_shopping/list_item_widgets/item_combo_product.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
-import 'package:test_shopping/list_item_widgets/item_product.dart';
 import 'package:test_shopping/ui_widgets/custom_information_widget.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_detail_bottom_widget.dart';
@@ -14,10 +11,7 @@ import 'package:test_shopping/ui_widgets/prod_details_basic_details_widget.dart'
 import 'package:test_shopping/ui_widgets/prod_details_shipping_info_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_other_details_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_price_details_widget.dart';
-import 'package:test_shopping/utils/circular_image.dart';
 import 'package:test_shopping/utils/color_constant.dart';
-import 'package:test_shopping/utils/dummy_data.dart';
-import 'package:test_shopping/widgets/custom_app_bar.dart';
 import 'package:test_shopping/widgets/image_slideshow_widget.dart';
 import 'package:test_shopping/widgets/item_customer_review.dart';
 import 'package:test_shopping/widgets/my_buttons.dart';
@@ -55,6 +49,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     });
     super.initState();
   }
+
+  List<bool> likeList = [true,false,false];
 
   @override
   Widget build(BuildContext context) {
@@ -152,13 +148,23 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             height: 10.h,
                           ),
                           ListView.builder(
-                              itemCount: 3,
+                              itemCount: likeList.length,
                               shrinkWrap: true,
                               padding: EdgeInsets.zero,
                               // scrollDirection: Axis.vertical,
                               physics: const NeverScrollableScrollPhysics(),
                               itemBuilder: (BuildContext context, int index) {
-                                return const ItemCustomerReview();
+                                return  ItemCustomerReview(
+                                  likeButton: () {
+                                    likeList[index]==true?likeList[index]=false:
+                                    likeList[index]=true;
+                                    setState(() {
+
+                                    });
+                                  },
+                                  infoButton: () {  },
+                                  isLiked: likeList[index],
+                                );
                               }),
                           SizedBox(
                             height: 10.h,

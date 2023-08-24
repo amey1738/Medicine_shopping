@@ -7,20 +7,21 @@ import 'package:test_shopping/widgets/my_text.dart';
 import '../utils/color_constant.dart';
 
 class OrderItem extends StatelessWidget {
-  final int? count= 4;
+  final int? count= 3;
   final VoidCallback click;
   const OrderItem({super.key, required this.click});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5),
+      padding:  EdgeInsets.only(left: 10.h,right: 10.h,bottom: 10.h),
       child: InkWell(
         onTap: click,
         child: Container(
           decoration: BoxDecoration(
+              color: greyBgColor,
               border: Border.all(
-                color: medicalBlue,
+                color: darkGrey,
               ),
               borderRadius: BorderRadius.all(Radius.circular(1))),
           child: Padding(
@@ -30,7 +31,7 @@ class OrderItem extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      MyText(text: "OrderID : #00022", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,),
+                      MyText(text: " #00022", fontName: "baloo", fontSize: 16.sp, fontWeight: FontWeight.bold,),
 
                       MyText(text: "Date : 01/01/1003", fontName: "baloo", fontSize: 14.sp)
                     ],
@@ -41,7 +42,7 @@ class OrderItem extends StatelessWidget {
                   children: [
                     MyText(text: "Total Items: 9", fontName: "baloo", fontSize: 12.sp,),
 
-                    MyText(text: "Amount: 99", fontName: "baloo", fontSize: 14.sp)
+                    MyText(text: "Amount: \u{20B9}99", fontName: "baloo", fontSize: 14.sp)
                   ],
                 ),
                 SizedBox(height: 5.h,),
@@ -56,7 +57,7 @@ class OrderItem extends StatelessWidget {
                             .size
                             .height / 20 - 1,
                         child: ListView.builder(
-                            itemCount: count!>4?4:count,
+                            itemCount: count!>3?3:count,
                             shrinkWrap: false,
                             padding: const EdgeInsets.only(),
                             scrollDirection: Axis.horizontal,

@@ -7,7 +7,15 @@ import 'package:test_shopping/utils/custom_loader.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 class ItemCustomerReview extends StatelessWidget {
-  const ItemCustomerReview({super.key});
+  final VoidCallback likeButton;
+  final VoidCallback infoButton;
+  final bool? isLiked;
+
+  const ItemCustomerReview(
+      {super.key,
+      required this.likeButton,
+      required this.infoButton,
+      this.isLiked = false});
 
   @override
   Widget build(BuildContext context) {
@@ -86,20 +94,21 @@ class ItemCustomerReview extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                  onTap: () {
-                    CustomLoader.showToast('Like Review');
-                  },
-                  child: const Icon(
-                    Icons.thumb_up_alt_outlined,
-                    color: lightGreyColor,
-                  )),
+                  onTap: likeButton,
+                  child: isLiked == false
+                      ? Icon(
+                          Icons.thumb_up_alt_outlined,
+                          color: lightGreyColor,
+                        )
+                      : Icon(
+                          Icons.thumb_up_alt,
+                          color: lightGreyColor,
+                        )),
               SizedBox(
                 width: 20.h,
               ),
               InkWell(
-                  onTap: () {
-                    CustomLoader.showToast('Like Review');
-                  },
+                  onTap: infoButton,
                   child: const Icon(Icons.info_outline, color: lightGreyColor))
             ],
           ),

@@ -19,15 +19,15 @@ class OTPTimerController extends GetxController {
       ),
       duration: 30,
       radius: 30,
-      backgroundColor: greenColor,
-      textColor: greenColor,
+      backgroundColor: medicalBlue,
+      textColor: medicalBlue,
       buttonType:
       ButtonType.text_button,
       loadingIndicator: const CircularProgressIndicator(
         strokeWidth: 2,
         color: greenColor,
       ),
-      loadingIndicatorColor: greenColor,
+      loadingIndicatorColor: medicalBlue,
       onPressed: click,
     );
   }

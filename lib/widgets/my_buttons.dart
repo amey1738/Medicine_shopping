@@ -11,11 +11,12 @@ class MyButtons extends StatelessWidget {
   final double? width;
   final double? circular;
   final FontWeight? fontWeight;
+  final Color? fontColor;
   const MyButtons(
       this.text,
       this.color,
       {Key? key, required this.click,required this.fontSize, this.circular=5,
-    this.fontWeight=FontWeight.w500, this.height, this.width}) : super(key: key);
+    this.fontWeight=FontWeight.w500, this.height, this.width, this.fontColor=whiteColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class MyButtons extends StatelessWidget {
           child: Text(text,
             style: TextStyle(
                 fontFamily: 'baloo',
-                color: whiteColor,
+                color: fontColor,
                 fontSize: fontSize,
                 fontWeight: fontWeight,
                 decoration: TextDecoration.none),

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_brand.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
+import 'package:test_shopping/screens/all_prod_screen.dart';
 import 'package:test_shopping/screens/cart_screen.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
 import 'package:test_shopping/utils/color_constant.dart';
@@ -145,12 +146,9 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
-                    MyText(
-                      text: 'See all >',
-                      fontName: 'baloo',
-                      fontSize: 14.sp,
-                      color: Colors.blue,
-                    )
+
+                    seeAll(),
+
                   ],
                 ),
               ),
@@ -231,12 +229,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
-                    MyText(
-                      text: 'See all >',
-                      fontName: 'baloo',
-                      fontSize: 14.sp,
-                      color: Colors.blue,
-                    )
+                    seeAll(),
                   ],
                 ),
               ),
@@ -255,6 +248,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
             ],
           ),
         ),
+        SizedBox(height: 20.h,),
         DevInfoWidget(),
         // ItemProduct(),
       ],
@@ -283,6 +277,25 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget seeAll(){
+    return  InkWell(
+      onTap: () {
+        Get.to(AllProdScreen());
+      },
+      child: Row(
+        children: [
+          MyText(
+            text: 'See all ',
+            fontName: 'baloo',
+            fontSize: 14.sp,
+            color: Colors.blue,
+          ),
+          Icon(Icons.arrow_forward_ios_outlined, color: Colors.blue, size: 12.h,)
+        ],
       ),
     );
   }
