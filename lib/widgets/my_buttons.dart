@@ -16,7 +16,7 @@ class MyButtons extends StatelessWidget {
       this.text,
       this.color,
       {Key? key, required this.click,required this.fontSize, this.circular=5,
-    this.fontWeight=FontWeight.w500, this.height, this.width, this.fontColor=whiteColor}) : super(key: key);
+    this.fontWeight=FontWeight.w500, this.height, this.width, this.fontColor=blackColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

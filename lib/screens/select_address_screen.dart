@@ -23,15 +23,14 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      floatingActionButton: FloatingButton(floatingText: "Done", click: (){
-        Get.to(DeliveryOptionsScreen());
-      }),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: whiteColor,
+        floatingActionButton: FloatingButton(floatingText: "Done", click: (){
+          Get.to(DeliveryOptionsScreen());
+        }),
 
-      body: Padding(
-        padding: EdgeInsets.only(top: 40.h),
-        child: Column(
+        body: Column(
           children: [
             CustomAppBar(title: "Select Address"),
             SizedBox(height: 10.h,),

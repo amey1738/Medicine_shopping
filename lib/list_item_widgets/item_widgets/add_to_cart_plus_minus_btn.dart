@@ -47,7 +47,7 @@ class _AddToCartPlusMinusBtnState extends State<AddToCartPlusMinusBtn> {
                       child: Center(child: MyText(text: 'Add to cart',
                           fontName: 'baloo',
                           fontSize: 14.sp,
-                          color: whiteColor)),
+                          color: blackColor)),
                     ),
                   ),
                 ),
@@ -68,7 +68,7 @@ class _AddToCartPlusMinusBtnState extends State<AddToCartPlusMinusBtn> {
                             controller.decrement();
                           },
                           iconSize: 15.h,
-                          color: whiteColor,
+                          color: blackColor,
                         ),
                       ),
                       MyText(text: controller.count.toString(),
@@ -90,7 +90,7 @@ class _AddToCartPlusMinusBtnState extends State<AddToCartPlusMinusBtn> {
                             controller.increment();
                           },
                           iconSize: 15.h,
-                          color: whiteColor,
+                          color: blackColor,
                         ),
                       ),
                     ],

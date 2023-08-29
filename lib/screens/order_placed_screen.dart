@@ -18,10 +18,9 @@ class OrderPlacedScreen extends StatefulWidget {
 class _OrderPlacedScreenState extends State<OrderPlacedScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding:  EdgeInsets.only(top: 40.h),
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

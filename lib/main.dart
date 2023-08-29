@@ -7,6 +7,7 @@ import 'package:test_shopping/onborading/onborading_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 
 import 'screens/home_screen.dart';
+import 'utils/tools.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    Tools.statusBar();
     ScreenUtil.init(context, designSize: const Size(375, 812));
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,

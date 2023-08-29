@@ -18,11 +18,10 @@ class OrderSummeryScreen extends StatefulWidget {
 class _OrderSummeryScreen extends State<OrderSummeryScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      body: Padding(
-        padding: EdgeInsets.only(top: 40.h),
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: whiteColor,
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

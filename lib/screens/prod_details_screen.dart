@@ -54,11 +54,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      body: Padding(
-        padding: EdgeInsets.only(top: 40.h),
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: whiteColor,
+        body: Column(
           children: [
             const ProdDetailAppBar(title: "Product Details"),
             Expanded(

@@ -17,11 +17,10 @@ class AllProdScreen extends StatefulWidget {
 class _AllProdScreenState extends State<AllProdScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      body: Padding(
-        padding: EdgeInsets.only(top: 40.h),
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: whiteColor,
+        body: Column(
           children: [
             const CustomAppBar(title: "Products"),
             Container(

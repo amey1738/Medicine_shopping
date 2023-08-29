@@ -54,7 +54,7 @@ class Tools {
   static void statusBar(){
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       //systemNavigationBarColor: Colors.blue,
-      statusBarColor: greenColor, // status bar color
+      statusBarColor: medicalBlue, // status bar color
     ));
   }
 

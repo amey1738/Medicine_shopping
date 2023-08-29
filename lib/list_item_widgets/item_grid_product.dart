@@ -31,7 +31,7 @@ class ItemGridProduct extends StatelessWidget {
                 children: [
                   Image.network(
                     sourceImageLink,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                   Container(
                     width: 70.h,
@@ -166,7 +166,7 @@ class ItemGridProduct extends StatelessWidget {
                         text: 'Add to cart',
                         fontName: 'baloo',
                         fontSize: 14.sp,
-                        color: whiteColor)),
+                        color: blackColor)),
               ),
             ],
           ),
