@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_shopping/models/slider_model.dart';
 
 class AutoSliderItems extends StatelessWidget {
-  final String sliderImage;
+  final SliderModel sliderImage;
   const AutoSliderItems({super.key, required this.sliderImage});
 
   @override
@@ -10,7 +11,7 @@ class AutoSliderItems extends StatelessWidget {
       width: double.infinity,
       height: 200,
       child: ClipRRect(
-        child: Image.network(sliderImage.toString(),
+        child: Image.network(sliderImage.img.toString(),
             fit: BoxFit.cover),
       ),
     );

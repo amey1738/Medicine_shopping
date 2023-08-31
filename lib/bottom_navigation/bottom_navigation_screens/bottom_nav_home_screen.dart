@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_brand.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
+import 'package:test_shopping/models/brand_model.dart';
+import 'package:test_shopping/models/slider_model.dart';
 import 'package:test_shopping/screens/all_prod_screen.dart';
 import 'package:test_shopping/screens/cart_screen.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
@@ -27,6 +29,9 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
   bool? isWhisListSelected = false;
   int isSwitchAnimal = 0;
   String? currentAddress = "Fetching current address";
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +129,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
 
         Padding(
           padding:  EdgeInsets.all(10.h),
-          child: const AutoSliderWidget(),
+          child:  AutoSliderWidget(sliderModels: [],),
         ),
         SizedBox(
           height: 5.h,
@@ -170,7 +175,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
 
         Padding(
           padding:  EdgeInsets.all(10.h),
-          child: const AutoSliderWidget(),
+          child:  AutoSliderWidget(sliderModels: [],),
         ),
 
         Container(
@@ -199,9 +204,12 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                   ),
-                  itemCount: 9,
+                  itemCount: brandImageLinks.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return ItemBrand();
+                    return ItemBrand(brandModel: BrandModel(
+                        name: brandNames[index],
+                        img: brandImageLinks[index]),
+                      click: () {Get.to(const AllProdScreen());  },);
                   })
             ],
           ),
@@ -209,7 +217,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
 
         Padding(
           padding:  EdgeInsets.all(10.h),
-          child: const AutoSliderWidget(),
+          child:  AutoSliderWidget(sliderModels: [],),
         ),
 
         Container(

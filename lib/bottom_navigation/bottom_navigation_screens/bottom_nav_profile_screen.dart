@@ -92,7 +92,7 @@ class _BottomNavMyProfileScreenState extends State<BottomNavMyProfileScreen> {
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(3),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(color: lightGreyColor, spreadRadius: 1),
