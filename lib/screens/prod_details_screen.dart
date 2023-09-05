@@ -12,6 +12,7 @@ import 'package:test_shopping/ui_widgets/prod_details_shipping_info_widget.dart'
 import 'package:test_shopping/ui_widgets/prod_other_details_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_price_details_widget.dart';
 import 'package:test_shopping/utils/color_constant.dart';
+import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/image_slideshow_widget.dart';
 import 'package:test_shopping/widgets/item_customer_review.dart';
 import 'package:test_shopping/widgets/my_buttons.dart';
@@ -207,12 +208,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     height: MediaQuery.sizeOf(context).height * 0.37,
                     color: greyBgColor,
                     child: ListView.builder(
-                        itemCount: 6,
+                        itemCount: dummyProducts.length,
                         shrinkWrap: true,
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
-                          return const ItemGridProduct();
+                          return  ItemGridProduct(productModel: dummyProducts[index],);
                         }),
                   ),
                   SizedBox(

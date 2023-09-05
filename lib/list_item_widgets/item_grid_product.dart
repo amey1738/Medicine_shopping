@@ -3,13 +3,15 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_widgets/add_to_cart_plus_minus_btn.dart';
+import 'package:test_shopping/models/product_model.dart';
 import 'package:test_shopping/screens/prod_details_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 class ItemGridProduct extends StatelessWidget {
-  const ItemGridProduct({super.key});
+  final ProductModel productModel;
+  const ItemGridProduct({super.key, required this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class ItemGridProduct extends StatelessWidget {
                 height: 4.h,
               ),
               MyText(
-                text: 'Product Name',
+                text: productModel.name.toString(),
                 fontName: 'baloo',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w400,
@@ -62,7 +64,7 @@ class ItemGridProduct extends StatelessWidget {
                 height: 4.h,
               ),
               MyText(
-                text: 'Product Description',
+                text: productModel.desc.toString(),
                 fontName: 'baloo',
                 fontSize: 12.sp,
                 color: lightGreyColor,
@@ -133,13 +135,13 @@ class ItemGridProduct extends StatelessWidget {
               Row(
                 children: [
                   MyText(
-                    text: "\u{20B9} 100 ",
+                    text: "\u{20B9} ${productModel.price.toString()} ",
                     fontName: "balo",
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                   ),
                   MyText(
-                    text: "\u{20B9} 100 ",
+                    text: "\u{20B9} ${productModel.mrp.toString()} ",
                     fontName: "balo",
                     fontSize: 14.sp,
                     lineThrough: TextDecoration.lineThrough,
@@ -148,7 +150,7 @@ class ItemGridProduct extends StatelessWidget {
                     width: 4.h,
                   ),
                   MyText(
-                    text: "0% off",
+                    text: "50% off",
                     fontName: "balo",
                     fontSize: 14.sp,
                     color: Colors.blueAccent,

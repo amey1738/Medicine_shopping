@@ -7,6 +7,7 @@ import 'package:test_shopping/list_item_widgets/item_brand.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
 import 'package:test_shopping/models/brand_model.dart';
+import 'package:test_shopping/models/category_model.dart';
 import 'package:test_shopping/models/slider_model.dart';
 import 'package:test_shopping/screens/all_prod_screen.dart';
 import 'package:test_shopping/screens/cart_screen.dart';
@@ -111,14 +112,13 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
           child: Padding(
             padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
             child: ListView.builder(
-                itemCount: 6,
+                itemCount: dummyCategories.length,
                 shrinkWrap: true,
                 padding: EdgeInsets.only(left: 5.h, right: 10.h),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return const CategoryItemWidget(
-                    imageLink: sourceImageLink,
-                    title: 'Category',
+                  return  CategoryItemWidget(
+                    categoryModel: dummyCategories[index],
                   );
                 }),
           ),
@@ -158,15 +158,15 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                 ),
               ),
               Container(
-                height: MediaQuery.sizeOf(context).height * 0.37,
+                height: MediaQuery.sizeOf(context).height * 0.40,
                 color: greyBgColor,
                 child: ListView.builder(
-                    itemCount: 6,
+                    itemCount: dummyProducts.length,
                     shrinkWrap: true,
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
-                      return const ItemGridProduct();
+                      return  ItemGridProduct(productModel: dummyProducts[index],);
                     }),
               ),
             ],
@@ -245,12 +245,12 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                 height: MediaQuery.sizeOf(context).height * 0.37,
                 color: greyBgColor,
                 child: ListView.builder(
-                    itemCount: 6,
+                    itemCount: dummyProducts.length,
                     shrinkWrap: true,
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
-                      return const ItemGridProduct();
+                      return  ItemGridProduct(productModel: dummyProducts[index],);
                     }),
               ),
             ],

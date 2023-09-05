@@ -16,6 +16,7 @@ class BrandModel {
     _img = json['img'];
     _type = json['type'];
   }
+
   num? _id;
   String? _name;
   String? _img;

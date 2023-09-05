@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       ),
       title: 'Test Shopping',
       home:
-      OnBoardingScreen(),
+      CustomBottomNav(),
 
     );
   }
