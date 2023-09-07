@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
+import 'package:test_shopping/models/product_model.dart';
 import 'package:test_shopping/ui_widgets/custom_information_widget.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
 import 'package:test_shopping/ui_widgets/prod_detail_bottom_widget.dart';
@@ -21,7 +22,8 @@ import 'package:test_shopping/widgets/prod_detail_app_bar.dart';
 import 'package:test_shopping/widgets/rating_info_widget.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  const ProductDetailsScreen({super.key});
+  final ProductModel productModel;
+  const ProductDetailsScreen({super.key, required this.productModel});
 
   @override
   State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
@@ -68,8 +70,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ImageSlideShowWidget(),
-                  ProdDetailsBasicDetailsWidget(),
+                  ImageSlideShowWidget(images: widget.productModel.images,),
+                  ProdDetailsBasicDetailsWidget(
+                    prodName: widget.productModel.name.toString(),
+                    vendorName: widget.productModel.vendorName.toString(),
+                    rating: 4,
+                    totalRatings: 100,),
                   SizedBox(
                     height: 5.h,
                   ),
@@ -205,7 +211,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   ),
 
                   Container(
-                    height: MediaQuery.sizeOf(context).height * 0.37,
+                    height: MediaQuery.sizeOf(context).height * 0.40,
                     color: greyBgColor,
                     child: ListView.builder(
                         itemCount: dummyProducts.length,

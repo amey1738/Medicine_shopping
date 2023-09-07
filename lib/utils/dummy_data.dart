@@ -40,7 +40,7 @@ final List<String> brandImageLinks = <String>[
 
 
 final List<String> dummyCategoryNames = <String> [
-  'Vitamins & Supplements',
+  'Vitamins',
   'Nutritional Drinks',
   'BP Monitors',
   'Ayurveda',
@@ -50,7 +50,7 @@ final List<String> dummyCategoryNames = <String> [
 ];
 
 final List<CategoryModel> dummyCategories = [
-  CategoryModel(id: 1, name: 'Vitamins & Supplements',
+  CategoryModel(id: 1, name: 'Vitamins ',
       imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/categories%2F2157816-The-7-Best-Vitamins-and-Supplements-for-Stress-According-to-Dietitians-1296x728-Header-81b9bf.webp?alt=media&token=171ff95d-d04f-47ef-898b-4d26568b1a0c' ),
   CategoryModel(id: 2, name:  'Nutritional Drinks',
       imgLink:  'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/categories%2Fensure-original-products-tile.jpg?alt=media&token=f1291048-8029-47e9-b850-f87fa5be33a0'),
@@ -82,16 +82,28 @@ final List<String> sliderImages1 = <String>[
   'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/test_app%2Fslider_images%2FMedicines.jpg?alt=media&token=0368d665-5508-4772-ab80-8f53eebc0ee3'
 ];
 
-final List<Images> dummyProductImages = <Images> [
-  Images(id: 1, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/test_app%2Fslider_images%2FMedicines.jpg?alt=media&token=0368d665-5508-4772-ab80-8f53eebc0ee3' ),
-  Images(id: 1, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/test_app%2Fslider_images%2FMedicines.jpg?alt=media&token=0368d665-5508-4772-ab80-8f53eebc0ee3' )
+final List<Images> prod1 = <Images> [
+  Images(id: 1, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fdr-morepen-bp-02-blood-pressure-monitor-2-1669710454.webp?alt=media&token=27574919-cf94-45f5-828f-a0ce3b436734' ),
 ];
 
+final List<Images> prod2 = <Images> [
+  Images(id: 2, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fluciara-cream.jpg?alt=media&token=a0fd7d7d-3620-4131-8270-2f9baa2950e4' ),
+];
+
+final List<Images> prod3 = <Images> [
+  Images(id: 3, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fplum-10-niacinamide-face-serum-with-rice-water-30-ml.webp?alt=media&token=f770c888-e429-4caf-9cce-5ad0e084301b' ),
+];
+
+final List<Images> prod4 = <Images> [
+  Images(id: 4, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fzandu-chyawanprash.jpg?alt=media&token=eea50e2d-0adc-4cf0-879b-70afef68e0e3' ),
+];
+
+
 final List<ProductModel> dummyProducts = <ProductModel> [
-  ProductModel(id: 1,name: 'Dr Morepen BP 02 Blood Pressure Monitor', catId: 1, desc: 'box of 1 unit', otherInfo: 'asd', images: dummyProductImages,price: 1100,mrp: 1450,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'Lciara Anti Stretch Marks cream', catId: 1, desc: 'tube of 50 gm Cream', otherInfo: 'asd', images: dummyProductImages,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'prod1', catId: 1, desc: 'desc', otherInfo: 'asd', images: dummyProductImages,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'prod1', catId: 1, desc: 'desc', otherInfo: 'asd', images: dummyProductImages,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Dr Morepen BP 02 Blood Pressure Monitor', catId: 1, desc: 'box of 1 unit', otherInfo: 'asd', images: prod1,price: 1100,mrp: 1450,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Lciara Anti Stretch Marks cream', catId: 1, desc: 'tube of 50 gm Cream', otherInfo: 'asd', images: prod2,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Zandu Chyavanprash Avaleha Jaggery', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod3,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Plum Rice Water & Niacinamide 10% Face serum', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod4,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
 ];
 
 //

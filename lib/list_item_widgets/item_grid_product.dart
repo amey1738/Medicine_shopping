@@ -21,7 +21,7 @@ class ItemGridProduct extends StatelessWidget {
       ),
       child: InkWell(
         onTap: (){
-          Get.to(ProductDetailsScreen());
+          Get.to(ProductDetailsScreen(productModel: productModel,));
         },
         child: Container(
           width: MediaQuery.sizeOf(context).width * 0.6,
@@ -32,8 +32,11 @@ class ItemGridProduct extends StatelessWidget {
               Stack(
                 children: [
                   Image.network(
-                    sourceImageLink,
+                    productModel.images![0].imgLink.toString(),
+                    height: MediaQuery.sizeOf(context).height * 0.2,
+                    width: MediaQuery.sizeOf(context).width * 0.6,
                     fit: BoxFit.fill,
+
                   ),
                   Container(
                     width: 70.h,

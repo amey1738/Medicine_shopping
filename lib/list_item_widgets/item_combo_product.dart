@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_widgets/add_to_cart_plus_minus_btn.dart';
+import 'package:test_shopping/models/product_model.dart';
 import 'package:test_shopping/screens/prod_details_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
@@ -19,7 +20,7 @@ class ItemComboProduct extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Get.to(
-            ProductDetailsScreen()
+            ProductDetailsScreen(productModel: ProductModel(),)
           );
         },
         child: Container(

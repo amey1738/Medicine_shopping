@@ -31,9 +31,6 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
   int isSwitchAnimal = 0;
   String? currentAddress = "Fetching current address";
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -242,7 +239,7 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
                 ),
               ),
               Container(
-                height: MediaQuery.sizeOf(context).height * 0.37,
+                height: MediaQuery.sizeOf(context).height * 0.40,
                 color: greyBgColor,
                 child: ListView.builder(
                     itemCount: dummyProducts.length,
