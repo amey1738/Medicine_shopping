@@ -7,10 +7,9 @@ import 'package:test_shopping/list_item_widgets/item_brand.dart';
 import 'package:test_shopping/list_item_widgets/item_category_widget.dart';
 import 'package:test_shopping/list_item_widgets/item_grid_product.dart';
 import 'package:test_shopping/models/brand_model.dart';
-import 'package:test_shopping/models/category_model.dart';
-import 'package:test_shopping/models/slider_model.dart';
 import 'package:test_shopping/screens/all_prod_screen.dart';
 import 'package:test_shopping/screens/cart_screen.dart';
+import 'package:test_shopping/test_screen.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
@@ -61,10 +60,15 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MyText(
-                text: 'Title Here',
-                fontName: 'baloo',
-                fontSize: 16.sp,
+              InkWell(
+                onTap: (){
+                  Get.to(TestScreen());
+                  },
+                child: MyText(
+                  text: 'Title Here',
+                  fontName: 'baloo',
+                  fontSize: 16.sp,
+                ),
               ),
               InkWell(
                 onTap: () {
@@ -267,19 +271,14 @@ class _BottomNavHomeScreenState extends State<BottomNavHomeScreen> {
         child: SizedBox(
           height: 45,
           width: double.infinity,
-          child: TextField(
-            onChanged: (value) {},
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: const Color(0xfff1f1f1),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(4),
-                borderSide: BorderSide.none,
-              ),
-              hintText: "Search for Items",
-              prefixIcon: const Icon(Icons.search),
-              prefixIconColor: Colors.black,
-            ),
+          child: Center(
+            child:  SearchBar(
+              hintText: 'Search',
+              shape: MaterialStateProperty.all(const ContinuousRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              )),
+              // other arguments
+            )
           ),
         ),
       ),

@@ -33,10 +33,10 @@ class _AutoSliderWidgetState extends State<AutoSliderWidget> {
             height: 200,
             width: MediaQuery.of(context).size.width,
             child: CarouselSlider.builder(
-              itemCount: sliderImages1.length,
+              itemCount: sliderImages2.length,
               itemBuilder:
                   (BuildContext context, int index, int pageViewIndex) =>
-                       AutoSliderItems(sliderImage: SliderModel(img: sliderImages1[index])),
+                       AutoSliderItems(sliderImage: SliderModel(img: sliderImages2[index])),
               options: CarouselOptions(
                   autoPlay: true,
                   enlargeCenterPage: false,

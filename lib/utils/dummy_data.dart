@@ -82,6 +82,11 @@ final List<String> sliderImages1 = <String>[
   'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/test_app%2Fslider_images%2FMedicines.jpg?alt=media&token=0368d665-5508-4772-ab80-8f53eebc0ee3'
 ];
 
+final List<String> sliderImages2 = <String>[
+  'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/test_app%2Fslider_image_2%2F49a6a0f0-668d-11ed-b7f8-ce09d82c1fb2_1668713554290.webp?alt=media&token=30545af1-e756-4235-b5ac-9c81c945e047',
+  'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/test_app%2Fslider_image_2%2Fmtablet_NSTfield_image_socialmedia.webp?alt=media&token=f03496c6-bbf3-47de-823a-1e755d7567aa'
+];
+
 final List<Images> prod1 = <Images> [
   Images(id: 1, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fdr-morepen-bp-02-blood-pressure-monitor-2-1669710454.webp?alt=media&token=27574919-cf94-45f5-828f-a0ce3b436734' ),
 ];
@@ -102,8 +107,8 @@ final List<Images> prod4 = <Images> [
 final List<ProductModel> dummyProducts = <ProductModel> [
   ProductModel(id: 1,name: 'Dr Morepen BP 02 Blood Pressure Monitor', catId: 1, desc: 'box of 1 unit', otherInfo: 'asd', images: prod1,price: 1100,mrp: 1450,vendorId: 1,vendorName: 'huehue' ),
   ProductModel(id: 1,name: 'Lciara Anti Stretch Marks cream', catId: 1, desc: 'tube of 50 gm Cream', otherInfo: 'asd', images: prod2,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'Zandu Chyavanprash Avaleha Jaggery', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod3,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'Plum Rice Water & Niacinamide 10% Face serum', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod4,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Plum Rice Water & Niacinamide 10% Face serum', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod3,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Zandu Chyavanprash Avaleha Jaggery', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod4,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
 ];
 
 //

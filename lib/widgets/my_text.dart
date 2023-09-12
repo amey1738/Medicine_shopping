@@ -28,7 +28,7 @@ class MyText extends StatelessWidget {
       child: Text(
         overflow: textOverflow,
           maxLines: maxLines,
-          softWrap: true,
+          softWrap: false,
           textAlign: textAlign,
           text,style: TextStyle(
           decoration: lineThrough,
