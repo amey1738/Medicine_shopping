@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_shopping/models/review_model.dart';
 import 'package:test_shopping/utils/circular_image.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/custom_loader.dart';
@@ -10,12 +11,12 @@ class ItemCustomerReview extends StatelessWidget {
   final VoidCallback likeButton;
   final VoidCallback infoButton;
   final bool? isLiked;
-
+  final ReviewModel reviewModel;
   const ItemCustomerReview(
       {super.key,
       required this.likeButton,
       required this.infoButton,
-      this.isLiked = false});
+      this.isLiked = false, required this.reviewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class ItemCustomerReview extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      MyText(text: 'Name', fontName: 'baloo', fontSize: 14.sp),
+                      MyText(text: reviewModel.userName.toString(), fontName: 'baloo', fontSize: 14.sp),
                       SizedBox(
                         width: 10.h,
                       ),
@@ -65,7 +66,7 @@ class ItemCustomerReview extends StatelessWidget {
           ),
           RatingBar.builder(
             itemSize: 14.h,
-            initialRating: 4,
+            initialRating: reviewModel.rating!.toDouble(),
             minRating: 1,
             direction: Axis.horizontal,
             allowHalfRating: false,
@@ -85,7 +86,7 @@ class ItemCustomerReview extends StatelessWidget {
             height: 5.h,
           ),
           MyText(
-              text: 'Customer Review content here',
+              text: reviewModel.review.toString(),
               fontName: 'baloo',
               fontSize: 14.sp),
           SizedBox(
@@ -104,6 +105,8 @@ class ItemCustomerReview extends StatelessWidget {
                           Icons.thumb_up_alt,
                           color: lightGreyColor,
                         )),
+              SizedBox(width: 5.h,),
+              MyText(text: reviewModel.likes.toString(), fontName: 'baloo', fontSize: 12.sp),
               SizedBox(
                 width: 20.h,
               ),

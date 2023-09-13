@@ -5,6 +5,7 @@ import 'package:test_shopping/list_item_widgets/item_address.dart';
 import 'package:test_shopping/screens/add_new_address_screen.dart';
 import 'package:test_shopping/screens/delivery_options_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
+import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/custom_app_bar.dart';
 import 'package:test_shopping/widgets/floating_button.dart';
 import 'package:test_shopping/widgets/my_text.dart';
@@ -59,7 +60,7 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
 
             Expanded(
               child: ListView.builder(
-                  itemCount: addressnames.length,
+                  itemCount: dummyAddresses.length,
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
@@ -73,7 +74,7 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
                           selectedItem = index;
                         });
                     },
-                    isSelected: selectedItem==index?true:false,
+                    isSelected: selectedItem==index?true:false, addressModel: dummyAddresses[index],
                     );
 
                   }),

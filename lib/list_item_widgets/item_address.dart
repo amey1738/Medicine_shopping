@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_shopping/models/address_model.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
@@ -8,9 +9,9 @@ class AddressItem extends StatelessWidget {
   final bool? isSelected;
   final VoidCallback click;
   final Color boxColor;
-
+  final AddressModel addressModel;
   const AddressItem(
-      {Key? key, required this.name, this.isSelected, required this.click, required this.boxColor})
+      {Key? key, required this.name, this.isSelected, required this.click, required this.boxColor, required this.addressModel})
       : super(key: key);
 
   @override
@@ -43,20 +44,24 @@ class AddressItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MyText(text: name,
+                        MyText(text: addressModel.name.toString(),
                           fontName: "baloo",
                           fontSize: 14.sp,
                           fontWeight: FontWeight.bold,),
                         SizedBox(height: 4.h,),
-                        MyText(text: "Address Line 1",
+                        MyText(text: addressModel.line1.toString(),
                           fontName: "baloo",
                           fontSize: 12.sp,),
                         SizedBox(height: 4.h,),
-                        MyText(text: "Address Line 2",
+                        MyText(text: addressModel.line2.toString(),
                           fontName: "baloo",
                           fontSize: 12.sp,),
                         SizedBox(height: 4.h,),
-                        MyText(text: "0000000000",
+                        MyText(text: '${addressModel.city} , ${addressModel.state}',
+                          fontName: "baloo",
+                          fontSize: 12.sp,),
+                        SizedBox(height: 4.h,),
+                        MyText(text: addressModel.pincode.toString(),
                           fontName: "baloo",
                           fontSize: 14.sp,
                           fontWeight: FontWeight.bold,),

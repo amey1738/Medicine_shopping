@@ -21,7 +21,7 @@ class ItemProduct extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Get.to(
-            ProductDetailsScreen(productModel: ProductModel(),)
+            ProductDetailsScreen(productModel: productModel,)
           );
         },
         child: Container(
@@ -142,7 +142,12 @@ class ItemProduct extends StatelessWidget {
                     ),
                   ],
                 ),
-                Divider(thickness: 1, color: medicalBlue,height: 10.h,)
+                SizedBox(height: 10.h,),
+                Container(
+                  color: medicalBlue,
+                  height: 1.h,
+                  width: double.infinity,
+                )
               ],
             ),
           ),

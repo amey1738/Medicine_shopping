@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:test_shopping/controller/add_to_cart_increase_controller.dart';
+import 'package:test_shopping/controller/cart_plus_minus_controller.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/custom_loader.dart';
 import 'package:test_shopping/widgets/my_text.dart';
@@ -15,7 +16,7 @@ class CartItemPlusMinusWidget extends StatefulWidget {
 
 class _CartItemPlusMinusWidgetState extends State<CartItemPlusMinusWidget> {
 
-  final controller = Get.put(AddToCartIncrease());
+  final controller = Get.put(CartPlusMinusController());
 
   @override
   Widget build(BuildContext context) {

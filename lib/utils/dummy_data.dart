@@ -1,5 +1,9 @@
+import 'package:test_shopping/models/address_model.dart';
 import 'package:test_shopping/models/category_model.dart';
+import 'package:test_shopping/models/order_model.dart';
+import 'package:test_shopping/models/price_model.dart';
 import 'package:test_shopping/models/product_model.dart';
+import 'package:test_shopping/models/review_model.dart';
 
 const sourceImageLink="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80";
 const sourceImageLink2="https://picsum.photos/200/300";
@@ -103,12 +107,42 @@ final List<Images> prod4 = <Images> [
   Images(id: 4, imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fzandu-chyawanprash.jpg?alt=media&token=eea50e2d-0adc-4cf0-879b-70afef68e0e3' ),
 ];
 
+final List<PriceModel> dummyPrice = <PriceModel>[
+  PriceModel(id : 1, name: "1 Pack", mrp: 100, price: 80),
+  PriceModel(id : 2, name: "2 Packs", mrp: 200, price: 150),
+];
 
 final List<ProductModel> dummyProducts = <ProductModel> [
   ProductModel(id: 1,name: 'Dr Morepen BP 02 Blood Pressure Monitor', catId: 1, desc: 'box of 1 unit', otherInfo: 'asd', images: prod1,price: 1100,mrp: 1450,vendorId: 1,vendorName: 'huehue' ),
   ProductModel(id: 1,name: 'Lciara Anti Stretch Marks cream', catId: 1, desc: 'tube of 50 gm Cream', otherInfo: 'asd', images: prod2,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'Plum Rice Water & Niacinamide 10% Face serum', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod3,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
-  ProductModel(id: 1,name: 'Zandu Chyavanprash Avaleha Jaggery', catId: 1, desc: 'desc', otherInfo: 'asd', images: prod4,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Plum Rice Water & Niacinamide 10% Face serum', catId: 1, desc: '100 ml bottle', otherInfo: 'asd', images: prod3,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+  ProductModel(id: 1,name: 'Zandu Chyavanprash Avaleha Jaggery', catId: 1, desc: '300g pack', otherInfo: 'asd', images: prod4,price: 100,mrp: 200,vendorId: 1,vendorName: 'huehue' ),
+];
+
+final List<ReviewModel> dummyReviews = <ReviewModel>[
+  ReviewModel(id: 1,prodId: 1,userId: 2,userName: "Ramesh",imgLink: "", review: "Very Nice Product!", likes: 2, rating: 5),
+  ReviewModel(id: 2,prodId: 1,userId: 2,userName: "Suresh",imgLink: "", review: "Good Product!", likes: 34, rating: 4),
+  ReviewModel(id: 3,prodId: 1,userId: 2,userName: "Ganesh",imgLink: "", review: "Very Bad Product", likes: 21, rating: 1),
+  ReviewModel(id: 4,prodId: 1,userId: 2,userName: "Rakesh",imgLink: "", review: "Ok product!", likes: 22, rating: 3),
+  ReviewModel(id: 5,prodId: 1,userId: 2,userName: "Prathamesh",imgLink: "", review: "Good", likes: 10, rating: 4),
+];
+
+
+final List<AddressModel> dummyAddresses = <AddressModel>[
+  AddressModel(id: 1,name: 'Amey',tag: '23',line1: 'address line 1', line2: 'address line 2', city: 'Mumbai',
+      state: 'Maharashtra', pincode: '400605', isSelected: true),
+  AddressModel(id: 1,name: 'Vishal',tag: '23',line1: 'address line 1', line2: 'address line 2', city: 'Pune',
+      state: 'Maharashtra', pincode: '400605', isSelected: true),
+];
+
+final List<OrderItems> dummyOrderItems = <OrderItems>[
+  OrderItems(id: 1,name: 'prodName 1', totalPrice: 222,qty: 2,unitPrice: 3,
+      imgLink: 'https://firebasestorage.googleapis.com/v0/b/ameydesigns-be5e2.appspot.com/o/testProductImages%2Fdr-morepen-bp-02-blood-pressure-monitor-2-1669710454.webp?alt=media&token=27574919-cf94-45f5-828f-a0ce3b436734')
+];
+
+final List<OrderModel> dummyOrders = <OrderModel>[
+  OrderModel(id: 1,items: 2,date: '20-02-2023',status: 'Delivered',orderItems: dummyOrderItems),
+  OrderModel(id: 2,items: 3,date: '25-02-2023',status: 'Shipped',orderItems: dummyOrderItems)
 ];
 
 //

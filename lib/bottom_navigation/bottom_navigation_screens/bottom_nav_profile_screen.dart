@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:test_shopping/list_item_widgets/item_profile_menu.dart';
+import 'package:test_shopping/screens/select_address_screen.dart';
 import 'package:test_shopping/ui_widgets/dev_info_widget.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/widgets/my_text.dart';
@@ -73,7 +75,13 @@ class _BottomNavMyProfileScreenState extends State<BottomNavMyProfileScreen> {
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     return ItemProfileMenu(
-                      name: optionList[index],
+                      name: optionList[index], click: () {
+                        if(index ==0){
+
+                        }else if (index == 1){
+                          Get.to(const SelectAddressScreen());
+                        }
+                    },
                     );
                   }),
               ListView.builder(
@@ -84,7 +92,7 @@ class _BottomNavMyProfileScreenState extends State<BottomNavMyProfileScreen> {
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
                     return ItemProfileMenu(
-                      name: footerOptionList[index],
+                      name: footerOptionList[index], click: () {  },
                     );
                   }),
               Padding(

@@ -5,7 +5,8 @@ import 'package:test_shopping/widgets/my_text.dart';
 
 class ItemProfileMenu extends StatelessWidget {
   final String name;
-  const ItemProfileMenu({super.key, required this.name});
+  final VoidCallback click;
+  const ItemProfileMenu({super.key, required this.name, required this.click});
 
   @override
   Widget build(BuildContext context) {
