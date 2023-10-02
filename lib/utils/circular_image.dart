@@ -14,7 +14,7 @@ class CircularImage extends StatelessWidget {
         width: radius,
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(100)),
-            border: Border.all(width: 1, color: greenColor)),
+            border: Border.all(width: 1, color: medicalBlue)),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100),
           child: Align(
