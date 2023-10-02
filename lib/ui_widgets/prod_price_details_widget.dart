@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:test_shopping/list_item_widgets/item_widgets/add_to_cart_plus_minus_btn.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/custom_loader.dart';
@@ -17,7 +18,7 @@ class ProdPriceDetailsWidget extends StatefulWidget {
 class _ProdPriceDetailsWidgetState extends State<ProdPriceDetailsWidget> {
 
   String dropdownValue = priceOptionDropdown.first;
-
+  String selectedPrice = dummyPrice[0].id.toString();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class _ProdPriceDetailsWidgetState extends State<ProdPriceDetailsWidget> {
           children: [
             MyText(text: "Select Item", fontName: "baloo", fontSize: 12.sp),
             SizedBox(height: 10.h,),
-            dropDown(),
+            dropDownPrice(),
             SizedBox(height: 10.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,6 +48,48 @@ class _ProdPriceDetailsWidgetState extends State<ProdPriceDetailsWidget> {
               ],
             )
           ],
+        ),
+      ),
+    );
+  }
+  Widget dropDownPrice(){
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(width: 1),
+          borderRadius: const BorderRadius.all(Radius.circular(5))
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: DropdownButton(
+          underline: Container(
+          ),
+          icon: const Icon(Icons.keyboard_arrow_down),
+          isDense: true,
+          isExpanded: true,
+          items: dummyPrice.map((e) {
+            return DropdownMenuItem(
+              value: e.id!.toString(),
+              child: Row(
+                children: [
+                  Text('${e.name.toString()} - ',style: const TextStyle(fontFamily: 'baloo')),
+                  SizedBox(width: 20.h,),
+                  MyText(text: '\u{20B9} ${e.price.toString()}', fontName: 'baloo', fontSize: 15.sp, fontWeight: FontWeight.bold,),
+                  SizedBox(width: 10.h,),
+                  MyText(text: '\u{20B9} ${e.mrp.toString()}', fontName: 'baloo', fontSize: 14.sp,lineThrough: TextDecoration.lineThrough,),
+                ],
+              ),
+            );
+          }
+          ).toList(),
+          value: selectedPrice.toString().isNotEmpty? selectedPrice : null,
+          hint:  Text('Select Type'.tr,style:  TextStyle(fontFamily: 'baloo'),),
+          onChanged: (value) {
+            setState(() {
+              selectedPrice = value!.toString();
+              debugPrint('selected role id : ${selectedPrice.toString()}');
+              // isSelected = true;
+            });
+          },
         ),
       ),
     );

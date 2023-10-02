@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_shopping/list_item_widgets/item_order_summery_products.dart';
 import 'package:test_shopping/screens/checkout_screen.dart';
 import 'package:test_shopping/utils/color_constant.dart';
+import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/custom_app_bar.dart';
 import 'package:test_shopping/widgets/my_buttons.dart';
 import 'package:test_shopping/widgets/my_text.dart';
@@ -65,19 +66,19 @@ class _OrderSummeryScreen extends State<OrderSummeryScreen> {
                             MyText(
                               text: "Name",
                               fontName: "baloo",
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.bold,
                             ),
                             MyText(
                               text: "Address line 1",
                               fontName: "baloo",
-                              fontSize: 14.sp,
+                              fontSize: 12.sp,
                               color: grey,
                             ),
                             MyText(
                               text: "City / PIN code",
                               fontName: "baloo",
-                              fontSize: 14.sp,
+                              fontSize: 12.sp,
                               color: grey,
                             ),
                             SizedBox(
@@ -86,7 +87,7 @@ class _OrderSummeryScreen extends State<OrderSummeryScreen> {
                             MyText(
                               text: "+91-0000000000",
                               fontName: "baloo",
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ],
@@ -111,14 +112,19 @@ class _OrderSummeryScreen extends State<OrderSummeryScreen> {
                       ),
                     ),
                     ListView.builder(
-                        itemCount: 6,
+                        itemCount: dummyProducts.length,
                         shrinkWrap: true,
                         padding: EdgeInsets.zero,
                         // scrollDirection: Axis.vertical,
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (BuildContext context, int index) {
-                          return OrderSummeryItems();
+                          return OrderSummeryItems(productModel: dummyProducts[index],);
                         }),
+                    Container(
+                      color: lightGreyColor,
+                      height: 1.h,
+                      width: double.infinity,
+                    ),
                     Container(
                       color: greyBgColor,
                       child: Padding(

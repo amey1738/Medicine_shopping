@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_shopping/list_item_widgets/item_widgets/order_item_image_widget.dart';
+import 'package:test_shopping/models/order_model.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
@@ -9,7 +10,8 @@ import '../utils/color_constant.dart';
 class OrderItem extends StatelessWidget {
   final int? count= 3;
   final VoidCallback click;
-  const OrderItem({super.key, required this.click});
+  final OrderModel orderModel;
+  const OrderItem({super.key, required this.click, required this.orderModel});
 
   @override
   Widget build(BuildContext context) {

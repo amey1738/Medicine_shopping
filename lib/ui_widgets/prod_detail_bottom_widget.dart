@@ -5,7 +5,8 @@ import 'package:test_shopping/widgets/my_buttons.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 class ProdDetailBottomWidget extends StatelessWidget {
-  const ProdDetailBottomWidget({super.key});
+  final String price, mrp;
+  const ProdDetailBottomWidget({super.key, required this.price, required this.mrp});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +25,13 @@ class ProdDetailBottomWidget extends StatelessWidget {
                 Row(
                   children: [
                     MyText(
-                      text: "\u{20B9} 100 ",
+                      text: "\u{20B9} $price ",
                       fontName: "balo",
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                     MyText(
-                      text: "\u{20B9} 100 ",
+                      text: "\u{20B9} $mrp ",
                       fontName: "balo",
                       fontSize: 14.sp,
                       lineThrough: TextDecoration.lineThrough,

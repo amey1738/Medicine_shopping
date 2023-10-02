@@ -27,7 +27,7 @@ class _BottomNavMyOrdersScreenState extends State<BottomNavMyOrdersScreen> {
           children: [
             Expanded(
               child: ListView.builder(
-                  itemCount: 4,
+                  itemCount: dummyOrders.length,
                   shrinkWrap: true,
                   padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
                   scrollDirection: Axis.vertical,
@@ -36,6 +36,7 @@ class _BottomNavMyOrdersScreenState extends State<BottomNavMyOrdersScreen> {
                       click: () {
                         Get.to(const OrderSummeryScreen());
                       },
+                      orderModel: dummyOrders[index],
                     );
                   }),
             ),

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_shopping/list_item_widgets/item_widgets/cart_item_plus_minus_widget.dart';
+import 'package:test_shopping/models/product_model.dart';
 import 'package:test_shopping/utils/color_constant.dart';
 import 'package:test_shopping/utils/dummy_data.dart';
 import 'package:test_shopping/widgets/my_text.dart';
 
 class ItemCart extends StatelessWidget {
-  const ItemCart({super.key});
+  final ProductModel productModel;
+  const ItemCart({super.key, required this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -22,48 +25,52 @@ class ItemCart extends StatelessWidget {
             Row(
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.network(
-                      sourceImageLink,
-                      height: 70.h,
-                      width: 100,
-                      fit: BoxFit.fill,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.network(
+                        productModel.images![0].imgLink.toString(),
+                        height: 70.h,
+                        width: 100,
+                        fit: BoxFit.fill,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MyText(
+                              text: productModel.name.toString(),
+                              fontName: "balo",
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            MyText(
+                              text: productModel.desc.toString(),
+                              fontName: "balo",
+                              fontSize: 12,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            const CartItemPlusMinusWidget()
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 80.h,
+                      ),
 
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        MyText(
-                          text: "Prod Name",
-                          fontName: "balo",
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        MyText(
-                          text: "Prod desc",
-                          fontName: "balo",
-                          fontSize: 12,
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 80.h,
-                    ),
-
-                  ],
+                    ],
+                  ),
                 ),
 
 
@@ -75,7 +82,7 @@ class ItemCart extends StatelessWidget {
                     MyText(
                       text: "\u{20B9} 100 ",
                       fontName: "balo",
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                     MyText(
@@ -87,20 +94,7 @@ class ItemCart extends StatelessWidget {
                     SizedBox(
                       height: 10.h,
                     ),
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: (){},
-                            child: Icon(Icons.delete_outline)),
-                        SizedBox(width: 10.h,),
-                        MyText(text: "1", fontName: "baloo", fontSize: 14.sp),
-                        SizedBox(width: 10.h,),
-                        InkWell(
-                            onTap: (){},
-                            child: Icon(Icons.add)),
 
-                      ],
-                    )
                   ],
                 ),
 
