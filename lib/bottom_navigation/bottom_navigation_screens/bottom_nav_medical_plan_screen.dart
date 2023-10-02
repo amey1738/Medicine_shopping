@@ -30,13 +30,13 @@ class _BottomNavMedicalPlanScreenState extends State<BottomNavMedicalPlanScreen>
               onTap: (){
                 Get.to(const BrakingDetectorScreen());
               },
-                child: ItemProfileMenu(name: 'harsh braking detector')),
+                child: ItemProfileMenu(name: 'harsh braking detector', click: () {  },)),
 
             InkWell(
                 onTap: (){
                   Get.to(const SharpTurnDetectorScreen());
                 },
-                child: ItemProfileMenu(name: 'sharp turn detector')),
+                child: ItemProfileMenu(name: 'sharp turn detector', click: () {  },)),
             ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
+
 import 'package:test_shopping/widgets/my_text.dart';
 
 class TestScreen extends StatefulWidget {
